@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
@@ -15,7 +15,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="64dp"
-        android:src="@drawable/ic_community_alert"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,8 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Alerta Vecinal"
-        android:textColor="@color/white"
+        android:text="Alarma Vecinal"
+        android:textColor="@color/colorWhite"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Alertas y chat para tu comunidad"
-        android:textColor="@color/white"
+        android:textColor="@color/colorWhite"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/colorWhite"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Iniciar Sesión"
-                android:textColor="@color/primary_dark"
+                android:textColor="@color/colorPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp" />
@@ -81,19 +81,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:boxBackgroundColor="@color/white"
-                app:boxStrokeColor="@color/primary"
-                app:hintTextColor="@color/primary_dark"
+                app:boxBackgroundColor="@color/colorWhite"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
                 app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/primary">
+                app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo electrónico"
+                    android:hint="Contraseña"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/colorBlack" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Campo de contraseña -->
@@ -102,13 +102,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                app:boxBackgroundColor="@color/white"
-                app:boxStrokeColor="@color/primary"
+                app:boxBackgroundColor="@color/colorWhite"
+                app:boxStrokeColor="@color/colorPrimary"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/primary"
-                app:hintTextColor="@color/primary_dark"
+                app:endIconTint="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
                 app:startIconDrawable="@drawable/ic_lock"
-                app:startIconTint="@color/primary">
+                app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordInput"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
                     android:inputType="textPassword"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/colorBlack" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Botón de login -->
@@ -125,10 +125,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/primary"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="Iniciar Sesión"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/colorWhite"
                 android:textSize="16sp"
                 style="@style/Widget.Material3.Button" />
 
@@ -138,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="¿Olvidaste tu contraseña?"
-                android:textColor="@color/primary"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:gravity="center" />
 
@@ -147,12 +147,12 @@
 
     <!-- Texto de registro -->
     <TextView
-        android:id="@+id/registerText"
+        android:id="@+id/registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="¿No tienes una cuenta? Regístrate"
-        android:textColor="@color/white"
+        android:textColor="@color/colorWhite"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="v1.0.0"
-        android:textColor="@color/white"
+        android:textColor="@color/colorWhite"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

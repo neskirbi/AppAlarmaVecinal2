@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#1976D2</color>
-    <color name="primary_dark">#1565C0</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#212121</color>
+    <!-- 🎨 Colores base -->
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrayLight">#F2F2F2</color>
+    <color name="colorGrayDark">#121212</color>
+
+    <!-- 🔵 Paleta Azul Rey -->
+    <color name="colorBluePrimary">#0033A0</color>      <!-- Azul Rey principal -->
+    <color name="colorBlueSecondary">#1A4DCC</color>    <!-- Azul más brillante -->
+    <color name="colorBlueAccent">#1565C0</color>       <!-- Azul de acento opcional -->
+
+    <!-- 🎨 Material Theme -->
+    <color name="colorPrimary">@color/colorBluePrimary</color>
+    <color name="colorPrimaryVariant">@color/colorBlueSecondary</color>
+    <color name="colorOnPrimary">@color/colorWhite</color>
+
+    <color name="colorSecondary">@color/colorBlack</color>
+    <color name="colorOnSecondary">@color/colorWhite</color>
+
+    <color name="colorBackground">@color/colorWhite</color>
+    <color name="colorOnBackground">@color/colorBlack</color>
+
+    <!-- Opcionales para dark mode -->
+    <color name="colorSurface">@color/colorGrayLight</color>
+    <color name="colorOnSurface">@color/colorBlack</color>
+
 </resources>
