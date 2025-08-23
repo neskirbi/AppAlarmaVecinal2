@@ -56,7 +56,7 @@
                 android:id="@+id/nameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre completo"
+                android:hint="Nombres"
                 app:startIconDrawable="@drawable/ic_person"
                 app:boxStrokeColor="@color/colorPrimary"
                 app:hintTextColor="@color/colorPrimary"
@@ -64,6 +64,24 @@
                 app:startIconTint="@color/colorPrimary">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- NombApellidos-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/apellidoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos"
+                app:startIconDrawable="@drawable/ic_person"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
+                android:layout_marginBottom="12dp"
+                app:startIconTint="@color/colorPrimary">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/apellidoInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorBlack"/>
