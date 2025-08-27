@@ -14,10 +14,10 @@ public class Metodos {
     public String GetUrl() {
         if (isDebug()) {
             // URL para desarrollo/depuración
-            return "http://192.168.100.6/AlarmaVecinal/public/api/"; // Cambia por tu IP local
+            return "http://"+ context.getString(R.string.localhost)+"/AlarmaVecinal/public/api/"; // Cambia por tu IP local
         } else {
             // URL para producción
-            return "https://tu-api-produccion.com/api/"; // Cambia por tu URL de producción
+            return "https://"+ context.getString(R.string.url)+"/api/"; // Cambia por tu URL de producción
         }
     }
 
