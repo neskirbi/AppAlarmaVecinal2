@@ -2,11 +2,11 @@ package com.app.appalarmavecinal.Login;
 
 import android.util.Log;
 import android.util.Patterns;
-import android.os.Handler;
-import android.os.Looper;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import com.app.appalarmavecinal.Models.Usuario;
-import com.app.appalarmavecinal.Services.ApiService;
+import com.app.appalarmavecinal.Login.ApiService;
 import com.app.appalarmavecinal.Retrofit.RetrofitClient;
 
 import retrofit2.Call;
@@ -19,7 +19,7 @@ public class LoginInteractor implements LoginContract.Interactor {
 
     @Override
     public void performLogin(String email, String password, OnLoginFinishedListener listener) {
-        // Validaciones
+        // Validaciones (igual que tienes)
         if (email.isEmpty()) {
             listener.onEmailError("El email es requerido");
             return;
@@ -40,14 +40,11 @@ public class LoginInteractor implements LoginContract.Interactor {
             return;
         }
 
-        // Llamada real a la API
+        // Llamada a la API
         ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
-
-        // Crear objeto para el login (puedes crear una clase LoginRequest si es necesario)
-        // Por ahora asumamos que tu API espera email y password como parámetros
         Call<Usuario> call = apiService.loginUser(email, password);
 
-        Log.i(TAG, "Intentando login con email: " + email);
+        Log.i("Login", email + " " + password);
 
         call.enqueue(new Callback<Usuario>() {
             @Override
@@ -58,15 +55,35 @@ public class LoginInteractor implements LoginContract.Interactor {
                     listener.onSuccess();
                 } else {
                     String errorMessage = "Error en el login";
+
                     if (response.errorBody() != null) {
                         try {
-                            errorMessage = response.errorBody().string();
+                            // Parsear el JSON de error
+                            JsonObject errorJson = JsonParser.parseString(response.errorBody().string()).getAsJsonObject();
+                            if (errorJson.has("error")) {
+                                errorMessage = errorJson.get("error").getAsString();
+                            }
                         } catch (Exception e) {
                             Log.e(TAG, "Error parsing error response", e);
+                            try {
+                                errorMessage = response.errorBody().string();
+                            } catch (Exception ex) {
+                                Log.e(TAG, "Error reading error body", ex);
+                            }
                         }
                     }
+
+                    // Mostrar el error específico del servidor
                     Log.e(TAG, "Login failed: " + errorMessage);
-                    listener.onFailure(errorMessage);
+
+                    // Diferenciar entre error de email y error de contraseña
+                    if (errorMessage.contains("Correo")) {
+                        listener.onEmailError(errorMessage);
+                    } else if (errorMessage.contains("Contrasenia")) {
+                        listener.onPasswordError(errorMessage);
+                    } else {
+                        listener.onFailure(errorMessage);
+                    }
                 }
             }
 

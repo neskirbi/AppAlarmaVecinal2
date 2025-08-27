@@ -1,9 +1,10 @@
 <resources>
     <string name="url">AppAlarmaVecinal</string>
     <!--Ip de prueba y url de produccion-->
-    <string name="localhost">AppAlarmaVecinal</string>
+    <string name="localhost">192.168.1.77</string>
 
 
+    <string name="app_name">AppAlarmaVecinal</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

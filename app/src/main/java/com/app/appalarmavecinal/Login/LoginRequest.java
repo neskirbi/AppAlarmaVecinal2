@@ -1,4 +1,4 @@
-package com.app.appalarmavecinal.Models;
+package com.app.appalarmavecinal.Login;
 
 public class LoginRequest {
     private String email;

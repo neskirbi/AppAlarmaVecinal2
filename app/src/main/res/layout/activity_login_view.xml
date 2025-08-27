@@ -91,7 +91,7 @@
                     android:id="@+id/emailInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Contraseña"
+                    android:hint="Correo"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/colorBlack" />
             </com.google.android.material.textfield.TextInputLayout>
