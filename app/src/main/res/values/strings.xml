@@ -1,7 +1,7 @@
 <resources>
     <string name="url">AppAlarmaVecinal</string>
     <!--Ip de prueba y url de produccion-->
-    <string name="localhost">192.168.100.6</string>
+    <string name="localhost">192.168.1.143</string>
 
 
     <string name="app_name">AlarmaVecinal</string>
@@ -18,6 +18,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_avisos">Avisos</string>
     <string name="menu_alerta">Alerta</string>
-    <string name="menu_grupo">Arupo</string>
+    <string name="menu_grupo">Grupo</string>
     <string name="menu_chat">Chat</string>
+    <string name="menu_salir">Salir</string>
 </resources>
