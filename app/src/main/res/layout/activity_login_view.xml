@@ -84,7 +84,7 @@
                 app:boxBackgroundColor="@color/colorWhite"
                 app:boxStrokeColor="@color/colorPrimary"
                 app:hintTextColor="@color/colorPrimary"
-                app:startIconDrawable="@drawable/ic_email"
+                app:startIconDrawable="@drawable/ic_mail"
                 app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText

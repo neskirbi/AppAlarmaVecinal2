@@ -1,18 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.AppAlarmaVecinal" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- 🎨 Colores primarios -->
+        <item name="colorPrimary">@color/colorBluePrimary</item>
+        <item name="colorPrimaryVariant">@color/colorBlueSecondary</item>
+        <item name="colorOnPrimary">@color/colorWhite</item>
+
+        <!-- 🎨 Colores secundarios -->
+        <item name="colorSecondary">@color/colorBlack</item>
+        <item name="colorOnSecondary">@color/colorWhite</item>
+
+        <!-- 🎨 Colores de fondo -->
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="colorOnBackground">@color/colorBlack</item>
+
+        <!-- 🎯 Status Bar -->
+        <item name="android:statusBarColor">@color/colorBluePrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/colorWhite</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/colorWhite</item>
+
+        <!-- Para Material 3 -->
+        <item name="materialThemeOverlay">@style/ThemeOverlay.AppAlarmaVecinal</item>
     </style>
 
+    <!-- Tema principal -->
     <style name="Theme.AppAlarmaVecinal" parent="Base.Theme.AppAlarmaVecinal" />
 
+    <!-- Tema sin ActionBar (redundante pero por compatibilidad) -->
     <style name="Theme.AppAlarmaVecinal.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.AppAlarmaVecinal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- ThemeOverlay para Material 3 -->
+    <style name="ThemeOverlay.AppAlarmaVecinal" parent="">
+        <item name="colorPrimary">@color/colorBluePrimary</item>
+        <item name="colorOnPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryContainer">@color/colorBlueSecondary</item>
+        <item name="colorOnPrimaryContainer">@color/colorWhite</item>
+    </style>
 
-    <style name="Theme.AppAlarmaVecinal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- AppBar Overlay actualizado para Material 3 -->
+    <style name="Theme.AppAlarmaVecinal.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorGrayLight</item>
+        <item name="android:background">@color/colorBluePrimary</item>
+    </style>
+
+    <!-- Popup Overlay actualizado para Material 3 -->
+    <style name="Theme.AppAlarmaVecinal.PopupOverlay" parent="ThemeOverlay.Material3.Light">
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- 🌙 Tema oscuro -->
+    <style name="Base.Theme.AppAlarmaVecinal.Dark" parent="Base.Theme.AppAlarmaVecinal">
+        <item name="android:colorBackground">@color/colorGrayDark</item>
+        <item name="colorOnBackground">@color/colorWhite</item>
+
+        <item name="android:navigationBarColor">@color/colorBlack</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <item name="android:windowBackground">@color/colorGrayDark</item>
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.AppAlarmaVecinal.Dark" parent="Base.Theme.AppAlarmaVecinal.Dark" />
+
 </resources>

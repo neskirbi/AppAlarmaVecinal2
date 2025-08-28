@@ -21,12 +21,12 @@ public class LoginPresenter implements LoginContract.Presenter {
     }
 
     @Override
-    public void loginUser(String email, String password) {
+    public void loginUser(String email, String pass) {
         if (view != null) {
             view.showProgress();
         }
 
-        interactor.performLogin(email, password, new LoginContract.Interactor.OnLoginFinishedListener() {
+        interactor.performLogin(email, pass, new LoginContract.Interactor.OnLoginFinishedListener() {
             @Override
             public void onSuccess() {
                 if (view != null) {

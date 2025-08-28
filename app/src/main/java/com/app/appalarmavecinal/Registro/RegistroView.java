@@ -1,10 +1,16 @@
 package com.app.appalarmavecinal.Registro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.app.appalarmavecinal.Login.LoginView;
 import com.app.appalarmavecinal.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -14,15 +20,20 @@ public class RegistroView extends AppCompatActivity implements RegistroContract.
     private TextInputEditText nameInput, apellidoInput, emailInput, passwordInput, confirmPasswordInput;
     private Button registerButton;
 
+    TextView login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro_view);
 
         // Inicializar presenter
         presenter = new RegistroPresenter(this, new RegistroInteractor());
 
         // Binding de vistas
+
+        login = findViewById(R.id.loginLink);
         nameInput = findViewById(R.id.nameInput);
         apellidoInput = findViewById(R.id.apellidoInput);
         emailInput = findViewById(R.id.emailInput);
@@ -32,6 +43,10 @@ public class RegistroView extends AppCompatActivity implements RegistroContract.
 
         // Configurar listeners
         registerButton.setOnClickListener(v -> attemptRegistration());
+
+        login.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), LoginView.class));
+        });
     }
 
     private void attemptRegistration() {

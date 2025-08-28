@@ -3,7 +3,6 @@ package com.app.appalarmavecinal.Login;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.app.appalarmavecinal.PrincipalView;
+import com.app.appalarmavecinal.Principal.PrincipalView;
 import com.app.appalarmavecinal.R;
 import com.app.appalarmavecinal.Registro.RegistroView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -69,13 +68,13 @@ public class LoginView extends AppCompatActivity implements LoginContract.View {
 
     private void attemptLogin() {
         String email = emailInput.getText().toString().trim();
-        String password = passwordInput.getText().toString().trim();
+        String pass = passwordInput.getText().toString().trim();
 
         // Limpiar errores previos
         emailLayout.setError(null);
         passwordLayout.setError(null);
 
-        presenter.loginUser(email, password);
+        presenter.loginUser(email, pass);
     }
 
     @Override

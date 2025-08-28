@@ -18,7 +18,7 @@ public class LoginInteractor implements LoginContract.Interactor {
     private static final String TAG = "LoginInteractor";
 
     @Override
-    public void performLogin(String email, String password, OnLoginFinishedListener listener) {
+    public void performLogin(String email, String pass, OnLoginFinishedListener listener) {
         // Validaciones (igual que tienes)
         if (email.isEmpty()) {
             listener.onEmailError("El email es requerido");
@@ -30,21 +30,21 @@ public class LoginInteractor implements LoginContract.Interactor {
             return;
         }
 
-        if (password.isEmpty()) {
+        if (pass.isEmpty()) {
             listener.onPasswordError("La contraseña es requerida");
             return;
         }
 
-        if (password.length() < 6) {
+        if (pass.length() < 6) {
             listener.onPasswordError("La contraseña debe tener al menos 6 caracteres");
             return;
         }
 
         // Llamada a la API
         ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
-        Call<Usuario> call = apiService.loginUser(email, password);
+        Call<Usuario> call = apiService.loginUser(email, pass);
 
-        Log.i("Login", email + " " + password);
+        Log.i("Request", call.toString());
 
         call.enqueue(new Callback<Usuario>() {
             @Override
