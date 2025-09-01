@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".CrearGrupo.CrearGrupoView"
+            android:exported="false" />
+        <activity
             android:name=".Grupo.GrupoView"
             android:exported="false" />
         <activity

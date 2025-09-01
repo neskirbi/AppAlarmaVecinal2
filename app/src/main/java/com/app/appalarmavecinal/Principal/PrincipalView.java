@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+
 import com.app.appalarmavecinal.Grupo.GrupoView;
+import com.app.appalarmavecinal.Models.GrupoDAO;
 import com.app.appalarmavecinal.Models.Usuario;
 import com.app.appalarmavecinal.Models.UsuarioDAO;
 import com.app.appalarmavecinal.R;
@@ -91,7 +93,10 @@ public class PrincipalView extends AppCompatActivity {
 
                 if (id == R.id.nav_grupo) {
 
-                   startActivity(new Intent(getApplicationContext(), GrupoView.class));
+                    // Check if there's a record in the grupos table
+
+                    startActivity(new Intent(getApplicationContext(), GrupoView.class));
+
                     return true;
                 }
 
