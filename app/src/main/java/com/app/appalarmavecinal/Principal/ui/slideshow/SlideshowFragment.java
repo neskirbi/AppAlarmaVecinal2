@@ -1,4 +1,4 @@
-package com.app.appalarmavecinal.ui.slideshow;
+package com.app.appalarmavecinal.Principal.ui.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,8 +18,8 @@ public class SlideshowFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        com.app.appalarmavecinal.ui.slideshow.SlideshowViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(com.app.appalarmavecinal.ui.slideshow.SlideshowViewModel.class);
 
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

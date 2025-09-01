@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.app.appalarmavecinal.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:name="com.app.appalarmavecinal.Principal.ui.home.HomeFragment"
+        android:label="@string/alarma_vecinal"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.app.appalarmavecinal.ui.gallery.GalleryFragment"
+        android:name="com.app.appalarmavecinal.Principal.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.app.appalarmavecinal.ui.slideshow.SlideshowFragment"
+        android:name="com.app.appalarmavecinal.Principal.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

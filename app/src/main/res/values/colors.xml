@@ -4,7 +4,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGrayLight">#F2F2F2</color>
-    <color name="colorGrayDark">#121212</color>
+    <color name="colorGrayDark">#1E1F22</color>
 
     <!-- 🔵 Paleta Azul Rey -->
     <color name="colorBluePrimary">#0033A0</color>      <!-- Azul Rey principal -->
@@ -25,5 +25,12 @@
     <!-- Opcionales para dark mode -->
     <color name="colorSurface">@color/colorGrayLight</color>
     <color name="colorOnSurface">@color/colorBlack</color>
+
+
+    <!-- Agrega estos colores a tu resources.xml -->
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreen">#00AA00</color>
+    <color name="colorOrange">#FF8800</color>
+    <color name="colorYellow">#FFFF00</color>
 
 </resources>
