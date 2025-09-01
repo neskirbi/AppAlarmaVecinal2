@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.app.appalarmavecinal.Grupo.GrupoView;
+import com.app.appalarmavecinal.Models.Usuario;
+import com.app.appalarmavecinal.Models.UsuarioDAO;
 import com.app.appalarmavecinal.R;
 import com.app.appalarmavecinal.Login.LoginView; // Asegúrate de importar tu LoginView
 import com.google.android.material.snackbar.Snackbar;
@@ -23,12 +26,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.appalarmavecinal.databinding.ActivityPrincipalBinding;
 
+import java.text.BreakIterator;
+
 public class PrincipalView extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityPrincipalBinding binding;
     private DrawerLayout drawer;
     private NavigationView navigationView;
+    private TextView tvNombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +53,19 @@ public class PrincipalView extends AppCompatActivity {
             }
         });
 
+
+        // Cargar el nombre del usuario
+
+
+
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
 
+        // Obtener referencia al TextView del header
+        View headerView = navigationView.getHeaderView(0);
+        tvNombreUsuario = headerView.findViewById(R.id.nombre_usuario);
+
+        cargarNombreUsuario();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -86,14 +102,19 @@ public class PrincipalView extends AppCompatActivity {
     }
 
     private void salirALogin() {
-        // Crear intent para ir a LoginView
-        Intent intent = new Intent(PrincipalView.this, LoginView.class);
+        // 1. Eliminar datos del usuario de SQLite
+        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+        usuarioDAO.eliminarUsuario();
 
-        // Limpiar el stack de actividades para que no se pueda volver atrás
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        // 2. Cerrar sesión en el servidor (si es necesario)
+        // Aquí puedes agregar una llamada a tu API para cerrar sesión
 
+        // 3. Redirigir al LoginView y limpiar el stack de actividades
+        Intent intent = new Intent(this, LoginView.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish(); // Finalizar la actividad actual
+        finish();
+
     }
 
     @Override
@@ -109,4 +130,22 @@ public class PrincipalView extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    private void cargarNombreUsuario() {
+        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+        Usuario usuario = usuarioDAO.obtenerUsuario();
+
+        if (usuario != null && usuario.getNombres() != null && !usuario.getNombres().isEmpty()) {
+            String nombreCompleto = usuario.getNombres();
+            if (usuario.getApellidos() != null && !usuario.getApellidos().isEmpty()) {
+                nombreCompleto += " " + usuario.getApellidos();
+            }
+            tvNombreUsuario.setText(nombreCompleto);
+        } else {
+            tvNombreUsuario.setText("Usuario"); // Texto por defecto
+        }
+    }
+
+
+
 }
