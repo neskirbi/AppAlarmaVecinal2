@@ -1,18 +1,17 @@
 package com.app.appalarmavecinal.Login;
 
-public class LoginRequest {
+class LoginRequest {
     private String email;
-    private String password;
+    private String pass;
 
-    public LoginRequest(String email, String password) {
+    public LoginRequest(String email, String pass) {
         this.email = email;
-        this.password = password;
+        this.pass = pass;
     }
 
     // Getters y setters
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public String getPass() { return pass; }
+    public void setPass(String pass) { this.pass = pass; }
 }

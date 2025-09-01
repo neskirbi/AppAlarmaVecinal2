@@ -1,4 +1,4 @@
-package com.app.appalarmavecinal.DB.database;
+package com.app.appalarmavecinal.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,10 +45,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_USUARIO_MAIL + " TEXT NOT NULL, " +
                     COLUMN_USUARIO_PASS + " TEXT NOT NULL, " +
                     COLUMN_USUARIO_DIRECCION + " TEXT, " +
-                    COLUMN_USUARIO_FECHA + " DATETIME, " +
-                    COLUMN_USUARIO_ULT_LOGIN + " DATETIME NOT NULL DEFAULT '2020-01-01 00:00:00', " +
-                    COLUMN_USUARIO_UPDATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-                    COLUMN_USUARIO_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                    COLUMN_USUARIO_FECHA + " TEXT, " +  // Cambiado a TEXT
+                    COLUMN_USUARIO_ULT_LOGIN + " TEXT NOT NULL DEFAULT '2020-01-01 00:00:00', " +  // Cambiado a TEXT
+                    COLUMN_USUARIO_UPDATED_AT + " TEXT DEFAULT (datetime('now')), " +  // Cambiado
+                    COLUMN_USUARIO_CREATED_AT + " TEXT DEFAULT (datetime('now'))" +  // Cambiado
                     ");";
 
     private static final String CREATE_TABLE_GRUPO =
@@ -57,8 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_GRUPO_USUARIO + " TEXT, " +
                     COLUMN_GRUPO_NOMBRE + " TEXT, " +
                     COLUMN_GRUPO_DESCRIPCION + " TEXT, " +
-                    COLUMN_GRUPO_UPDATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-                    COLUMN_GRUPO_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                    COLUMN_GRUPO_UPDATED_AT + " TEXT DEFAULT (datetime('now')), " +  // Cambiado
+                    COLUMN_GRUPO_CREATED_AT + " TEXT DEFAULT (datetime('now'))" +  // Cambiado
                     ");";
 
     // Crear índices

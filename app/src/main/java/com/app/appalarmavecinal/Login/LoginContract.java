@@ -12,14 +12,15 @@ public interface LoginContract {
     }
 
     interface Presenter {
-        void attachView(View view);
+
         void detachView();
         void loginUser(String email, String password);
-        void navigateToRegister();
+        boolean isUserLoggedIn();
     }
 
     interface Interactor {
         void performLogin(String email, String password, OnLoginFinishedListener listener);
+        boolean isUserLoggedIn();
 
         interface OnLoginFinishedListener {
             void onSuccess();

@@ -1,19 +1,20 @@
 package com.app.appalarmavecinal.Login;
 
+import android.content.Context;
+
 public class LoginPresenter implements LoginContract.Presenter {
 
     private LoginContract.View view;
     private LoginContract.Interactor interactor;
 
-    public LoginPresenter(LoginContract.View view) {
+    Context context;
+
+    public LoginPresenter(LoginContract.View view,Context context) {
         this.view = view;
-        this.interactor = new LoginInteractor();
+        this.context = context;
+        this.interactor = new LoginInteractor(context);
     }
 
-    @Override
-    public void attachView(LoginContract.View view) {
-        this.view = view;
-    }
 
     @Override
     public void detachView() {
@@ -61,10 +62,10 @@ public class LoginPresenter implements LoginContract.Presenter {
         });
     }
 
+
+
     @Override
-    public void navigateToRegister() {
-        if (view != null) {
-            // La navegación se maneja en la View
-        }
+    public boolean isUserLoggedIn() {
+        return interactor.isUserLoggedIn();
     }
 }

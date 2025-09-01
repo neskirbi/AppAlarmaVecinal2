@@ -32,7 +32,13 @@ public class LoginView extends AppCompatActivity implements LoginContract.View {
         setContentView(R.layout.activity_login_view);
 
         // Inicializar presenter
-        presenter = new LoginPresenter(this);
+        presenter = new LoginPresenter(this,this);
+
+        // Verificar si ya hay usuario logueado
+        if (presenter.isUserLoggedIn()) {
+            navigateToHome();
+            return; // Importante: salir del onCreate para no mostrar el login
+        }
 
         // Inicializar vistas
         initViews();

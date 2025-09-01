@@ -1,40 +1,61 @@
 package com.app.appalarmavecinal.Models;
 
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
 
 public class Usuario {
     // Campos principales
+    @SerializedName("id_usuario")
     private String id_usuario;
-    private String id_grupo;
-    private String mail;
-    private String pass;
-    private Date ult_login;
-    private Date updated_at;
 
-    // Campos opcionales (pueden ser null)
+    @SerializedName("id_grupo")
+    private String id_grupo;
+
+    @SerializedName("nombres")
     private String nombres;
+
+    @SerializedName("apellidos")
     private String apellidos;
+
+    @SerializedName("mail")
+    private String mail;
+
+    @SerializedName("pass")
+    private String pass;
+
+    @SerializedName("direccion")
     private String direccion;
-    private Date fecha;
+
+    @SerializedName("fecha")
+    private String fecha;
+
+    @SerializedName("ult_login")
+    private String ult_login;
+
+    @SerializedName("updated_at")
+    private String updated_at;
+
+    @SerializedName("created_at")
+    private String created_at;
 
     // Constructor vacío (necesario para Retrofit/GSON)
     public Usuario() {
     }
 
     // Constructor completo
-    public Usuario(String id_usuario, String id_grupo, String mail, String pass,
-                   Date ult_login, Date updated_at, String nombres, String apellidos,
-                   String direccion, Date fecha) {
+    public Usuario(String id_usuario, String id_grupo, String nombres, String apellidos,
+                   String mail, String pass, String direccion, String fecha,
+                   String ult_login, String updated_at, String created_at) {
         this.id_usuario = id_usuario;
         this.id_grupo = id_grupo;
-        this.mail = mail;
-        this.pass = pass;
-        this.ult_login = ult_login;
-        this.updated_at = updated_at;
         this.nombres = nombres;
         this.apellidos = apellidos;
+        this.mail = mail;
+        this.pass = pass;
         this.direccion = direccion;
         this.fecha = fecha;
+        this.ult_login = ult_login;
+        this.updated_at = updated_at;
+        this.created_at = created_at;
     }
 
     // Getters y Setters
@@ -54,38 +75,6 @@ public class Usuario {
         this.id_grupo = id_grupo;
     }
 
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public Date getUlt_login() {
-        return ult_login;
-    }
-
-    public void setUlt_login(Date ult_login) {
-        this.ult_login = ult_login;
-    }
-
-    public Date getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
-    }
-
     public String getNombres() {
         return nombres;
     }
@@ -102,6 +91,22 @@ public class Usuario {
         this.apellidos = apellidos;
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
     public String getDireccion() {
         return direccion;
     }
@@ -110,12 +115,36 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getUlt_login() {
+        return ult_login;
+    }
+
+    public void setUlt_login(String ult_login) {
+        this.ult_login = ult_login;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     // Método toString para debugging
@@ -124,14 +153,15 @@ public class Usuario {
         return "Usuario{" +
                 "id_usuario='" + id_usuario + '\'' +
                 ", id_grupo='" + id_grupo + '\'' +
-                ", mail='" + mail + '\'' +
-                ", pass='" + pass + '\'' +
-                ", ult_login=" + ult_login +
-                ", updated_at=" + updated_at +
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
+                ", mail='" + mail + '\'' +
+                ", pass='" + pass + '\'' +
                 ", direccion='" + direccion + '\'' +
-                ", fecha=" + fecha +
+                ", fecha='" + fecha + '\'' +
+                ", ult_login='" + ult_login + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", created_at='" + created_at + '\'' +
                 '}';
     }
 }
