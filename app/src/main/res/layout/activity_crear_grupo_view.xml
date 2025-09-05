@@ -35,9 +35,12 @@
 
             <!-- Nombre del Grupo -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gruponombreLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
                 app:boxBackgroundColor="@color/colorWhite"
                 app:boxCornerRadiusTopStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -50,15 +53,19 @@
                     android:layout_height="wrap_content"
                     android:hint="Nombre del grupo"
                     android:inputType="textCapWords"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:textColor="@color/colorBlack" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Descripción -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descripcionLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
                 app:boxBackgroundColor="@color/colorWhite"
                 app:boxCornerRadiusTopStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -72,7 +79,8 @@
                     android:hint="Descripción (opcional)"
                     android:inputType="textMultiLine"
                     android:minLines="3"
-                    android:maxLines="5" />
+                    android:maxLines="5"
+                    android:textColor="@color/colorBlack"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -152,6 +160,7 @@
             android:textAllCaps="true"
             app:icon="@drawable/ic_group_add"
             app:iconGravity="textStart"
+            app:iconTint="@color/colorWhite"
             app:backgroundTint="@color/colorPrimary"
             android:textColor="@color/colorWhite"
             app:cornerRadius="12dp" />

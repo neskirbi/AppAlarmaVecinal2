@@ -51,7 +51,7 @@
     <style name="Theme.AppAlarmaVecinal.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar">
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:textColorSecondary">@color/colorGrayLight</item>
-        <item name="android:background">@color/colorBluePrimary</item>
+        <item name="android:background">#00FFFFFF</item>
     </style>
 
     <!-- Popup Overlay actualizado para Material 3 -->

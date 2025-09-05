@@ -48,6 +48,7 @@ public class LoginView extends AppCompatActivity implements LoginContract.View {
     private void initViews() {
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
+        passwordInput = findViewById(R.id.passwordInput);
         emailLayout = findViewById(R.id.emailLayout);
         passwordLayout = findViewById(R.id.passwordLayout);
         loginButton = findViewById(R.id.loginButton);

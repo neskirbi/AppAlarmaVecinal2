@@ -27,36 +27,54 @@
             app:cardBackgroundColor="@color/colorWhite"
             android:layout_gravity="center">
 
-            <!-- Cuadro blanco con esquinas redondas -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/qr_background" />
-
-            <!-- Imagen invisible -->
+            <!-- Imagen QR -->
             <ImageView
                 android:id="@+id/qrImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_qr"
-                android:padding="5dp"
-                android:visibility="invisible"
-                android:contentDescription="Código QR de la familia" />
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Código QR del grupo" />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Texto "Familia" -->
+        <!-- Texto del nombre del grupo -->
         <TextView
             android:id="@+id/grupo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text=":"
             android:textSize="28sp"
             android:textStyle="bold"
             android:layout_marginTop="24dp"
             android:textColor="@color/colorWhite"
             android:layout_gravity="center"
             android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvDescripQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <!-- Mensaje adicional -->
+        <TextView
+            android:id="@+id/tvMensajeQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone" />
+
 
     </LinearLayout>
 
